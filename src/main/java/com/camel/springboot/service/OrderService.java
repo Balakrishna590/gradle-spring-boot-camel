@@ -1,5 +1,9 @@
 package com.camel.springboot.service;
 
-public class OrderService {
+import com.camel.springboot.response.models.OrderResponse;
+
+public interface OrderService {
+	
+	public OrderResponse generateOrder();
 
 }

@@ -6,14 +6,14 @@ public class OrderResponse {
 
 	private int amount;
 
-	private BookResponse book;
+	private BookResponse bookResponse;
 
 	private boolean processed;
 
-    public void setProcessed() {
-        processed = true;
-    }
-	
+	public void setProcessed() {
+		processed = true;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -30,12 +30,12 @@ public class OrderResponse {
 		this.amount = amount;
 	}
 
-	public BookResponse getBook() {
-		return book;
+	public BookResponse getBookResponse() {
+		return bookResponse;
 	}
 
-	public void setBook(BookResponse book) {
-		this.book = book;
+	public void setBookResponse(BookResponse bookResponse) {
+		this.bookResponse = bookResponse;
 	}
 
 	public boolean isProcessed() {
@@ -48,7 +48,7 @@ public class OrderResponse {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", amount=" + amount + ", book=" + book + ", processed=" + processed + "]";
+		return "Order [id=" + id + ", amount=" + amount + ", bookResponse=" + bookResponse + ", processed=" + processed + "]";
 	}
 
 }

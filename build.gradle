@@ -21,10 +21,6 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-jar {
-    baseName = 'camel-spring-boot'
-    version =  '0.0.1-SNAPSHOT'
-}
 
 repositories {
 	mavenCentral()
@@ -49,7 +45,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.apache.camel:camel-spring-boot-starter:2.24.2'
-	//implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	mplementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'javax.xml.bind:jaxb-api:2.3.1'
 	implementation 'org.hibernate:hibernate-entitymanager:5.4.9.Final'
 	//implementation 'org.apache.camel.springboot:camel-spring-boot-starter'
