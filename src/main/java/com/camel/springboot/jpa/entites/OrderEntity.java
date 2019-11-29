@@ -1,20 +1,19 @@
 package com.camel.springboot.jpa.entites;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.camel.springboot.annotations.Consumed;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "ORDERS")
 @NamedQuery(name ="new-orders", query="SELECT OrderEntity FROM OrderEntity OE WHERE OE.processed = false")
 public class OrderEntity {
 
@@ -26,8 +25,8 @@ public class OrderEntity {
 	@Column(name="AMOUNT")
 	private int amount;
 
-	@OneToOne(targetEntity=BookEntity.class,cascade=CascadeType.ALL)
-	@JoinColumn(name="BOOK_ENTITY_ID",referencedColumnName="id")
+	@ManyToOne
+	@JoinColumn(name="BOOK_ENTITY_ID")
 	private BookEntity bookEntity;
 
 	@Column(name="PROCESSED", columnDefinition="NUMBER(1)")

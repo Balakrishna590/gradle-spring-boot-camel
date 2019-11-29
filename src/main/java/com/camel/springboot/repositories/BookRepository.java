@@ -18,6 +18,8 @@ package com.camel.springboot.repositories;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.camel.springboot.jpa.entites.BookEntity;
 
@@ -25,6 +27,8 @@ import com.camel.springboot.jpa.entites.BookEntity;
  * @author broutu
  *
  */
+@Repository
+@Transactional
 public interface BookRepository extends CrudRepository<BookEntity, Integer> {
 	
 	@Query("SELECT BookEntity FROM BookEntity BE")
