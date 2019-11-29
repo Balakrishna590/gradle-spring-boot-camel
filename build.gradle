@@ -1,0 +1,72 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	//id 'org.apache.camel' version: '2.24.2'
+	//id 'org.apache.camel.springboot' version ''
+	//id 'org.hibernate' version 'hibernate.version'
+	//id "com.jfrog.artifactory" version "<plugin version>"
+	id 'java'
+}
+
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'eclipse'
+//apply plugin: 'org.apache.camel'
+//apply plugin: 'org.apache.camel.springboot'
+//apply plugin 'org.hibernate'
+//apply plugin: "com.jfrog.artifactory"
+
+group = 'com.camel.springboot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+jar {
+    baseName = 'camel-spring-boot'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+    maven {
+    	credentials {
+			username "developer"
+			password "APVyLy7ZaGM69jyyeiomnbSJuu"
+		}
+        url "https://igtb.jfrog.io/igtb/libs-release"
+        }
+	maven {
+		credentials {
+			username "developer"
+			password "APVyLy7ZaGM69jyyeiomnbSJuu"
+		}
+		url "https://igtb.jfrog.io/igtb/libs-snapshot"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.apache.camel:camel-spring-boot-starter:2.24.2'
+	//implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+	implementation 'org.hibernate:hibernate-entitymanager:5.4.9.Final'
+	//implementation 'org.apache.camel.springboot:camel-spring-boot-starter'
+	//implementation 'org.apache.camel.springboot:camel-servlet-starter'
+	//implementation 'org.apache.camel:camel-jpa-starter'
+	implementation 'com.github.noraui:ojdbc8:12.2.0.1'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+//test {
+//	useJUnitPlatform()
+//}
+
+task gradle {
+	doLast {
+      println 'test gradle !'
+   }	
+}
